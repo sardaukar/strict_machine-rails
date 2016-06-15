@@ -3,8 +3,11 @@ require "strict_machine"
 
 module StrictMachine
   module Rails
-    VERSION = "0.1.0".freeze
+    VERSION = "0.1.2".freeze
   end
 end
 
-ActiveRecord::Base.send :include, StrictMachine::MountStateMachine
+require_relative "rails/class_methods"
+require_relative "rails/active_record_persistence"
+
+require_relative "rails/inject"
